@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            background-image: url('https://img.freepik.com/free-vector/space-background-with-stars-vector-illustration_97886-319.jpg?w=2000');
+        }
+        h1,h3{
+            color: yellow;
+        }
+
+        #display{
+            width: 350px;
+            height: auto;
+            border: 2px solid yellow;
+            border-radius: 20px;
+            margin: auto;
+            margin-top: 200px;
+            text-align: center;
+        }
+        button{
+            /* margin: auto; */
+            margin-top: 20px;
+            margin-left: 670px;
+            height: 40px;
+            width: 150px;
+            font-size: 18px;
+            border-radius: 10px;
+            
+            
+            border: 2px solid yellow;
+            background-color: black;
+
+        }
+        a{
+            color: yellow;
+        }
+    </style>
+</head>
+<body>
+    
+    
+    <div id="display">
+        
+        
+        
+    </div>
+    <button><a href="index.html">go back</a></button>
+    
+</body>
+</html>
+<script>
+    let arr=JSON.parse(localStorage.getItem('clickdata'));
+
+    
+
+    function append(){
+        arr.forEach(function(el){
+            let container=document.getElementById('display');
+            let box1=document.createElement('div');
+            let name=document.createElement('h1');
+            name.innerText=el.name
+
+            let h4=document.createElement('h3')
+            h4.innerText='Personal Info'
+
+            let birth=document.createElement('h3')
+            birth.innerText='Birth Year :' + el.birth_year
+
+            let g=document.createElement('h3')
+            g.innerText='Gender :' +el.gender;
+
+            let h=document.createElement('h3')
+            h.innerText='Height :' +el.height;
+
+
+            box1.append(name,h4,birth,g,h);
+            container.append(box1);
+
+        })
+    }
+    append()
+
+
+
+</script>
